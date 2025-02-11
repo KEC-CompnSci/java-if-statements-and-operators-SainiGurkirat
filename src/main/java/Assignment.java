@@ -9,8 +9,11 @@ public class Assignment {
      * - Large popcorn costs $7.25 (1 popcorn to share)
      */
     public static double calculateMovieNight() {
-        // TODO: Implement this method
-        return 0.0;
+        double adultTickets = 2 * 12.50;
+        double childTickets = 3 * 8;
+        double largePopcorn = 1 * 7.25;
+
+        return adultTickets + childTickets + largePopcorn;
     }
 
     /**
@@ -20,8 +23,11 @@ public class Assignment {
      * @return true if age is 25 or older, false otherwise
      */
     public static boolean canRentCar(int age) {
-        // TODO: Implement this method
+       if (age >= 25){
+        return true;
+       }else{
         return false;
+       }
     }
 
     /**
@@ -31,8 +37,11 @@ public class Assignment {
      * @return true if password length is 8 or more, false otherwise
      */
     public static boolean isValidPasswordLength(String password) {
-        // TODO: Implement this method
-        return false;
+        if(password.length() >= 8){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -43,8 +52,11 @@ public class Assignment {
      * @return true if difference is 5000 or more, false otherwise
      */
     public static boolean needsOilChange(int mileage, int lastChangeMileage) {
-        // TODO: Implement this method
-        return false;
+        if(mileage-lastChangeMileage >= 5000){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -53,8 +65,11 @@ public class Assignment {
      * @return "Divisible by 3" if number is divisible by 3, "" otherwise
      */
     public static String getDivisibleByThreeMessage(int number) {
-        // TODO: Implement this method
-        return "";
+        if(number % 3 == 0){
+            return "Divisible by 3";
+        } else {
+            return "";
+        }
     }
 
     /**
@@ -65,8 +80,14 @@ public class Assignment {
      * except if it's divisible by 100 but not by 400
      */
     public static String getLeapYearMessage(int year) {
-        // TODO: Implement this method
-        return "";
+        if(year % 4 == 0){
+            if (year % 100 != 0 ){
+                return "Leap Year";
+            }
+            if (year % 100 == 0 && year % 400 == 0){
+                return "Leap Year";
+            }else return "Not Leap Year";
+        }else return "Not Leap Year";
     }
 
     /**
@@ -76,7 +97,12 @@ public class Assignment {
      *         "Student Price" if age is 13-21, "Adult Price" if age is 22+
      */
     public static String getTicketPriceCategory(int age) {
-        // TODO: Implement this method
-        return "";
+        if(age < 5){
+            return "Free";
+        }else if(age >= 5 && age <= 12){
+            return "Child Price";
+        }else if(age >= 13 && age <= 21){
+            return "Student Price";
+        }else return "Adult Price";
     }
 }
